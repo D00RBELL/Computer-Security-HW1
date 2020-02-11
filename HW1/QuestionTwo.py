@@ -68,7 +68,7 @@ xyztext = encryptText(plaintext, xyzkey)
 wxyztext = encryptText(plaintext, wxyzkey)
 vwxyztext = encryptText(plaintext, vwxyzkey)
 uvwxyztext = encryptText(plaintext, uvwxyzkey)
-
+print()
 print("yz Frequency Variance")
 variance = varianceFinder(yztext)
 print(variance)
@@ -84,3 +84,90 @@ print(variance)
 print("uvwxyz Frequency Variance")
 variance = varianceFinder(uvwxyztext)
 print(variance)
+
+caesarU = []
+caesarV = []
+caesarW = []
+caesarX = []
+caesarY = []
+caesarZ = []
+varianceU = 0
+varianceV = 0
+varianceW = 0
+varianceX = 0
+varianceY = 0
+varianceZ = 0
+mean = 0
+
+for i in range(0, len(yztext), 2):
+    caesarY.append(yztext[i])
+    caesarZ.append(yztext[i + 1])
+
+caesarY = "" . join(caesarY)
+caesarZ = "" . join(caesarZ)
+
+varianceY = varianceFinder(caesarY)
+varianceZ = varianceFinder(caesarZ)
+mean = (varianceY + varianceZ)/2
+print()
+print(mean)
+
+caesarY = []
+caesarZ = []
+for i in range(0, len(xyztext), 3):
+    caesarX.append(xyztext[i])
+    caesarY.append(xyztext[i + 1])
+    caesarZ.append(xyztext[i + 2])
+
+caesarX = "" . join(caesarX)
+caesarY = "" . join(caesarY)
+caesarZ = "" . join(caesarZ)
+
+varianceX = varianceFinder(caesarX)
+varianceY = varianceFinder(caesarY)
+varianceZ = varianceFinder(caesarZ)
+mean = (varianceY + varianceZ + varianceX)/3
+print(mean)
+
+caesarX = []
+caesarY = []
+caesarZ = []
+for i in range(0, len(wxyztext), 4):
+    caesarW.append(wxyztext[i])
+    caesarX.append(wxyztext[i + 1])
+    caesarY.append(wxyztext[i + 2])
+    caesarZ.append(wxyztext[i + 3])
+
+caesarW = "" . join(caesarW)
+caesarX = "" . join(caesarX)
+caesarY = "" . join(caesarY)
+caesarZ = "" . join(caesarZ)
+
+varianceW = varianceFinder(caesarW)
+varianceX = varianceFinder(caesarX)
+varianceY = varianceFinder(caesarY)
+varianceZ = varianceFinder(caesarZ)
+mean = (varianceY + varianceZ + varianceX + varianceW)/4
+print(mean)
+
+
+caesarX = []
+caesarY = []
+caesarZ = []
+for i in range(0, len(wxyztext), 4):
+    caesarW.append(wxyztext[i])
+    caesarX.append(wxyztext[i + 1])
+    caesarY.append(wxyztext[i + 2])
+    caesarZ.append(wxyztext[i + 3])
+
+caesarW = "" . join(caesarW)
+caesarX = "" . join(caesarX)
+caesarY = "" . join(caesarY)
+caesarZ = "" . join(caesarZ)
+
+varianceW = varianceFinder(caesarW)
+varianceX = varianceFinder(caesarX)
+varianceY = varianceFinder(caesarY)
+varianceZ = varianceFinder(caesarZ)
+mean = (varianceY + varianceZ + varianceX + varianceW)/4
+print(mean)
